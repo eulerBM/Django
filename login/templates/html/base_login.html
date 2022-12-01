@@ -1,3 +1,5 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,20 +7,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     
 
 </head>
-    <ul>
 
-    </ul>
-        {% for clientes in cliente  %}
-            <li>{{clientes.nome}}</li>
-            <li>{{clientes.email}}</li>
-            <li>{{clientes.data}}</li>
-            <br>
-        {% endfor %}
-    </ul>
 <body>
- <h1>Ola</h1>
+
+<div class="container">
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Pessoas</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Livros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sair</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav> 
+    
+    <a href="http://127.0.0.1:8000/cadastro/" target="_blank">
+      
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-success" type="submit">Adicionar</button>
+      </div>
+
+    </a>
+      
+      
+
+      <div class="container text-center">
+        {% for clientes in cliente  %}
+          
+        <div class="row">
+        
+          <div class="col">
+
+            {{clientes.nome}}
+
+          </div>
+          <div class="col">
+
+            {{clientes.email}}
+
+          </div>
+          <div class="col">
+
+            {{clientes.data}} 
+
+
+          </div>
+          
+        {% endfor %}
+
+      
+
+        </div>
+      </div>
+    
+</div>
+
 </body>
 </html>
