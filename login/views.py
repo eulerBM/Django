@@ -33,7 +33,13 @@ def edit_user(request,pessoa_pk):
             return redirect ('pagina_inicial')
 
     return render (request, "html/Editar.html", {'login':form_2})
-    
+
+
+def excluir_user(request, pessoa_pk):
+    pessoa = login_1.objects.get(pk=pessoa_pk)
+    pessoa.delete()
+
+    return redirect('pagina_inicial')
 
 
 

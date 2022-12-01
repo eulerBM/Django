@@ -22,4 +22,5 @@ urlpatterns = [
     path('login/', views.login, name='pagina_inicial'),
     path('cadastro/', views.cadastro, name='cadastro'),
     path('editar/<int:pessoa_pk>', views.edit_user, name='edit_user'),
+    path('excluir/<int:pessoa_pk>', views.excluir_user, name='excluir_user')
 ]

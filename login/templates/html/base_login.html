@@ -52,7 +52,12 @@
           </div>
           <div class="col">
 
-            {{clientes.data}} <a class="btn btn-warning" href="{% url 'edit_user' clientes.id %}">Editar</a>
+            {{clientes.data}}
+
+             <a class="btn btn-warning" href="{% url 'edit_user' clientes.id %}">Editar</a>
+             <a class="btn btn-danger" href="{% url 'excluir_user' clientes.id %}"
+             onclick="return confirm('Deseja Excluir ?')">Excluir</a>
+             <p></p>
 
 
           </div>
