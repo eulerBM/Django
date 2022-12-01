@@ -22,8 +22,17 @@ def cadastro (request):
 
     return render(request,"html/cadastro.html", {'login':form})
     
+def edit_user(request,pessoa_pk):
+    pessoa = login_1.objects.get(pk=pessoa_pk)
 
-    
+    form_2= formulariocadastro(request.POST or None, instance=pessoa)
+
+    if request.POST:
+        if form_2.is_valid():
+            form_2.save()
+            return redirect ('pagina_inicial')
+
+    return render (request, "html/Editar.html", {'login':form_2})
     
 
 
